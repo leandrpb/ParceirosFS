@@ -100,6 +100,14 @@
           "target": [
             "TargetListaParceiros"
           ]
+        },
+        {
+          "name": "RouteParceiro",
+          "pattern": "parceiro/{CodigoParceiro}",
+          "target": [
+            "TargetListaParceiros",
+            "TargetParceiro"
+          ]
         }
       ],
       "targets": {
@@ -110,6 +118,14 @@
           "clearControlAggregation": false,
           "viewId": "ListaParceiros",
           "viewName": "ListaParceiros"
+        },
+        "TargetParceiro":{
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": false,
+          "viewId": "Parceiro",
+          "viewName": "Parceiro"
         }
       }
     },

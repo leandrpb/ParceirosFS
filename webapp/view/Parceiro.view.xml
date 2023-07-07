@@ -1,0 +1,13 @@
+<mvc:View
+	controllerName="zappfreestyle.parceiros.controller.Parceiro"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+    <Page id="page" title="{i18n>title}">
+        
+    </Page>
+</mvc:View>

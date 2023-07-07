@@ -14,7 +14,7 @@
             </columns>
 
             <items>
-                <ColumnListItem >
+                <ColumnListItem type="Navigation" press="aoClicarNoItem">
                     <ObjectIdentifier
                         title="{Nome1} {Nome2}"
                         text="{CodigoParceiro}"
