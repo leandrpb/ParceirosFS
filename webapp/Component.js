@@ -41,12 +41,11 @@ sap.ui.define([
                 this.setModel(models.createDeviceModel(), "device");
             },
             aoExecutarRota: function (oEvent) {
-                debugger;
-
+                // Obtem layout definido na função init
                 let oLayout = this.getModel("layout");
 
                 let sRota = oEvent.getParameter("name");
-
+                // Altera layout do App.view.xml de acordo com a rota
                 if (sRota === "RouteParceiro") {
                     oLayout.setProperty("/visual", sap.f.LayoutType.TwoColumnsMidExpanded)
                 } else {

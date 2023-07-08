@@ -1,13 +1,122 @@
-<mvc:View
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.f.semantic"
 	controllerName="zappfreestyle.parceiros.controller.Parceiro"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:c="sap.ui.core"
+	xmlns:l="sap.ui.layout"
 	displayBlock="true"
 	height="100%"
 	busyIndicatorDelay="0"
 >
     <Page id="page" title="{i18n>title}">
-        
+        <semantic:SemanticPage >
+			<semantic:titleMainAction>
+				<semantic:TitleMainAction text="Edit"/>
+			</semantic:titleMainAction>
+
+			<semantic:titleHeading>
+				<Title
+					level="Auto"
+					text="{Nome1} {Nome2}"
+					textAlign="Initial"
+					titleStyle="Auto"
+					width=""
+					wrapping="false"
+					wrappingType="Normal"
+				/>
+
+			</semantic:titleHeading>
+
+			<semantic:headerContent>
+				<ObjectAttribute title="Tipo do Parceiro" text="{Tipo}"/>
+				<ObjectAttribute title="ID Parceiro" text="{CodigoParceiro}"/>
+			</semantic:headerContent>
+
+			<semantic:content>
+				<l:VerticalLayout>
+					<l:content>
+						<form:SimpleForm
+							id="SimpleFormDadosUsuario"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Dados Usuário"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false"
+						>
+							<form:content>
+								<Label text="Tipo" />
+								<Input value="{Tipo}" editable="false"/>
+
+								<Label text="Nome 1" />
+								<Input value="{Nome1}" editable="false"/>
+
+								<Label text="Nome 2" />
+								<Input value="{Nome2}" editable="false"/>
+
+								<Label text="Termo de Pesquisa 1" />
+								<Input value="{TermoDePesquisa1}" editable="false"/>
+
+								<Label text="Termo de Pesquisa 2" />
+								<Input value="{TermoDePesquisa2}" editable="false"/>
+							</form:content>
+						</form:SimpleForm>
+
+						<form:SimpleForm
+							id="SimpleFormDadosEndereco"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Endereço"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false"
+						>
+							<form:content>
+								<Label text="Rua" />
+								<Input value="{Rua}" editable="false"/>
+
+								<Label text="Número da Casa" />
+								<Input value="{NumeroCasa}" editable="false"/>
+
+								<Label text="Bairro" />
+								<Input value="{Bairro}" editable="false"/>
+
+								<Label text="Cidade" />
+								<Input value="{Cidade}" editable="false"/>
+
+								<Label text="Estado" />
+								<Input value="{Estado}" editable="false"/>
+
+								<Label text="País" />
+								<Input value="{Pais}" editable="false"/>
+
+								<Label text="CEP" />
+								<Input value="{CEP}" editable="false"/>
+							</form:content>
+						</form:SimpleForm>
+					</l:content>
+				</l:VerticalLayout>
+			</semantic:content>
+		</semantic:SemanticPage>
     </Page>
 </mvc:View>
