@@ -1,7 +1,9 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel"
 ], function(
-	Controller
+	Controller,
+	JSONModel
 ) {
 	"use strict";
 
@@ -11,7 +13,10 @@ sap.ui.define([
 			let oRotaDesejada = oRoteador.getRoute("RouteParceiro");
 
 			oRotaDesejada.attachPatternMatched(this.rotaDetalhe, this);
-		
+			
+			let oModel = new JSONModel();
+			oModel.setProperty("/habilitado", false);
+			this.getView().setModel(oModel, "editavel");
 		},
 		rotaDetalhe: function(oEvent) {
 			let sCodigoParceiro = oEvent.getParameters("arguments").arguments.CodigoParceiro;
@@ -23,6 +28,14 @@ sap.ui.define([
 			});
 
 			this.getView().bindElement(sCaminho);
+		},
+		onButtonEdit: function(oEvent) {
+			this._ConfiguraEdicao(true)
+		},
+		_ConfiguraEdicao: function(bHabilitaEdicao) {
+			let oModelEditavel = this.getView().getModel("editavel");
+
+			oModelEditavel.setProperty("/habilitado", bHabilitaEdicao)
 		}
 	});
 });

@@ -9,9 +9,9 @@
 	busyIndicatorDelay="0"
 >
     <Page id="page" title="{i18n>title}">
-        <semantic:SemanticPage >
+        <semantic:SemanticPage showFooter="true">
 			<semantic:titleMainAction>
-				<semantic:TitleMainAction text="Edit"/>
+				<semantic:TitleMainAction text="Edit" press="onButtonEdit"/>
 			</semantic:titleMainAction>
 
 			<semantic:titleHeading>
@@ -56,19 +56,19 @@
 						>
 							<form:content>
 								<Label text="Tipo" />
-								<Input value="{Tipo}" editable="false"/>
+								<Input value="{Tipo}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Nome 1" />
-								<Input value="{Nome1}" editable="false"/>
+								<Input value="{Nome1}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Nome 2" />
-								<Input value="{Nome2}" editable="false"/>
+								<Input value="{Nome2}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Termo de Pesquisa 1" />
-								<Input value="{TermoDePesquisa1}" editable="false"/>
+								<Input value="{TermoDePesquisa1}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Termo de Pesquisa 2" />
-								<Input value="{TermoDePesquisa2}" editable="false"/>
+								<Input value="{TermoDePesquisa2}" editable="{editavel>/habilitado}"/>
 							</form:content>
 						</form:SimpleForm>
 
@@ -93,30 +93,38 @@
 						>
 							<form:content>
 								<Label text="Rua" />
-								<Input value="{Rua}" editable="false"/>
+								<Input value="{Rua}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Número da Casa" />
-								<Input value="{NumeroCasa}" editable="false"/>
+								<Input value="{NumeroCasa}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Bairro" />
-								<Input value="{Bairro}" editable="false"/>
+								<Input value="{Bairro}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Cidade" />
-								<Input value="{Cidade}" editable="false"/>
+								<Input value="{Cidade}" editable="{editavel>/habilitado}"/>
 
 								<Label text="Estado" />
-								<Input value="{Estado}" editable="false"/>
+								<Input value="{Estado}" editable="{editavel>/habilitado}"/>
 
 								<Label text="País" />
-								<Input value="{Pais}" editable="false"/>
+								<Input value="{Pais}" editable="{editavel>/habilitado}"/>
 
 								<Label text="CEP" />
-								<Input value="{CEP}" editable="false"/>
+								<Input value="{CEP}" editable="{editavel>/habilitado}"/>
 							</form:content>
 						</form:SimpleForm>
 					</l:content>
 				</l:VerticalLayout>
 			</semantic:content>
+
+			<semantic:footerMainAction>
+				<semantic:FooterMainAction text="Save"/>
+			</semantic:footerMainAction>
+
+			<semantic:footerCustomActions>
+				<Button text="Cancel" />
+			</semantic:footerCustomActions>
 		</semantic:SemanticPage>
     </Page>
 </mvc:View>
