@@ -9,7 +9,7 @@
 	busyIndicatorDelay="0"
 >
     <Page id="page" title="{i18n>title}">
-        <semantic:SemanticPage showFooter="true">
+        <semantic:SemanticPage showFooter="{editavel>/habilitado}">
 			<semantic:titleMainAction>
 				<semantic:TitleMainAction text="Edit" press="onButtonEdit"/>
 			</semantic:titleMainAction>
@@ -119,11 +119,11 @@
 			</semantic:content>
 
 			<semantic:footerMainAction>
-				<semantic:FooterMainAction text="Save"/>
+				<semantic:FooterMainAction text="Save" press="onButtonSave"/>
 			</semantic:footerMainAction>
 
 			<semantic:footerCustomActions>
-				<Button text="Cancel" />
+				<Button text="Cancel" press="onButtonCancel"/>
 			</semantic:footerCustomActions>
 		</semantic:SemanticPage>
     </Page>
