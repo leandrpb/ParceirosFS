@@ -55,6 +55,9 @@
 							singleContainerFullSize="false"
 						>
 							<form:content>
+								<Label text="Código Parceiro" />
+								<Input value="{CodigoParceiro}" editable="{editavel>/habilitado}"/>
+
 								<Label text="Tipo" />
 								<Input value="{Tipo}" editable="{editavel>/habilitado}"/>
 

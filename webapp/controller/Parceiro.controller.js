@@ -32,6 +32,12 @@ sap.ui.define([
 			});
 
 			this.getView().bindElement(sCaminho);
+
+			if (sCodigoParceiro === "novo_parc") {
+				this._ConfiguraEdicao(true)
+			} else {
+				this._ConfiguraEdicao(false)
+			}
 		},
 		onButtonEdit: function(oEvent) {
 			this._ConfiguraEdicao(true);
@@ -46,7 +52,7 @@ sap.ui.define([
 			let oDadosTela = this.getView().getBindingContext().getObject();
 			let oModel = this.getOwnerComponent().getModel();
 
-			let oInformacoesUpdate = {
+			let oInformacoes = {
 				CodigoParceiro: oDadosTela.CodigoParceiro,
 				Tipo: oDadosTela.Tipo,
 				Nome1: oDadosTela.Nome1,
@@ -62,15 +68,27 @@ sap.ui.define([
 				CEP: oDadosTela.CEP
 			};
 
-			oModel.update(sCaminho, oInformacoesUpdate,{
-				success: () => {
-					MessageToast.show('Parceiro atualizado com sucesso!')
-					this._ConfiguraEdicao(false);
-				},
-				error: (oError) => {
-					MessageToast.show(JSON.parse(oError.responseText).error.message.value)
-				}
-			})
+			if (sCaminho === "/ParceirosSet('novo_parc')"){
+				oModel.create("/ParceirosSet", oInformacoes, {
+					success: () => {
+						MessageToast.show('Parceiro criado com sucesso!')
+						this._ConfiguraEdicao(false);
+					},
+					error: (oError) => {
+						MessageToast.show(JSON.parse(oError.responseText).error.message.value)
+					}
+				})
+			} else {
+				oModel.update(sCaminho, oInformacoes,{
+					success: () => {
+						MessageToast.show('Parceiro atualizado com sucesso!')
+						this._ConfiguraEdicao(false);
+					},
+					error: (oError) => {
+						MessageToast.show(JSON.parse(oError.responseText).error.message.value)
+					}
+				})
+			}
 		},
 		_ConfiguraEdicao: function(bHabilitaEdicao) {
 			let oModelEditavel = this.getView().getModel("editavel");

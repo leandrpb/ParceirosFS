@@ -27,6 +27,13 @@ sap.ui.define([
                 oRoteador.navTo("RouteParceiro", {
                     CodigoParceiro: sCodigoParceiro
                 })
+            },
+            onButtonCriarParceiro: function (oEvent) {
+                let oRoteador = this.getOwnerComponent().getRouter();
+
+                oRoteador.navTo("RouteParceiro", {
+                    CodigoParceiro: "novo_parc"
+                })
             }
         });
     });

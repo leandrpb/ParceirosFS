@@ -3,6 +3,13 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <Table id="idTabela" items="{/ParceirosSet}" growing="true" growingScrollToLoad="true">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Parceiros"/>
+                    <ToolbarSpacer />
+                    <Button text="Criar Parceiro" type="Emphasized" press="onButtonCriarParceiro"/>
+                </OverflowToolbar>
+            </headerToolbar>
             <columns>
                 <Column >
                     <Text text="Parceiro" />
