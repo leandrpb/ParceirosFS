@@ -2,12 +2,13 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <Table id="idTabela" items="{/ParceirosSet}" growing="true" growingScrollToLoad="true">
+        <Table id="idTabela" items="{/ParceirosSet}" growing="true" growingScrollToLoad="true" mode="SingleSelectLeft">
             <headerToolbar>
                 <OverflowToolbar>
                     <Title text="Parceiros"/>
                     <ToolbarSpacer />
                     <Button text="Criar Parceiro" type="Emphasized" press="onButtonCriarParceiro"/>
+                    <Button text="Deletar Parceiro" type="Negative" press="onButtonDeletarParceiro"/>
                 </OverflowToolbar>
             </headerToolbar>
             <columns>
